@@ -1,4 +1,4 @@
-    <div id="footer">Copyright 2017, Aygerim Sauletkhan
+    <div id="footer">Copyright <?php echo date("Y"); ?>, Aygerim Sauletkhan
     <br> Senior Design Project (Widget Fictional Corp) - North American University
   </div>
 
