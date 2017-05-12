@@ -22,8 +22,6 @@ if (isset($_POST['submit'])) {
 		$found_admin = attempt_login($username, $password);
 
     if ($found_admin) {
-      // Success
-			// Mark user as logged in
 			$_SESSION["admin_id"] = $found_admin["id"];
 			$_SESSION["username"] = $found_admin["username"];
       redirect_to("admin.php");
@@ -33,9 +31,9 @@ if (isset($_POST['submit'])) {
     }
   }
 } else {
-  // This is probably a GET request
 
-} // end: if (isset($_POST['submit']))
+
+} 
 
 ?>
 

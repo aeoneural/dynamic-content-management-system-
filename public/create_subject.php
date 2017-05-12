@@ -30,17 +30,14 @@ if (isset($_POST['submit'])) {
 	$result = mysqli_query($connection, $query);
 
 	if ($result) {
-		// Success
 		$_SESSION["message"] = "Subject created.";
 		redirect_to("manage_content.php");
 	} else {
-		// Failure
 		$_SESSION["message"] = "Subject creation failed.";
 		redirect_to("new_subject.php");
 	}
 
 } else {
-	// This is probably a GET request
 	redirect_to("new_subject.php");
 }
 

@@ -6,10 +6,8 @@
 <?php find_selected_page(); ?>
 
 <?php
-  // Unlike new_page.php, we don't need a subject_id to be sent
-  // We already have it stored in pages.subject_id.
+
   if (!$current_page) {
-    // page ID was missing or invalid or
     // page couldn't be found in database
     redirect_to("manage_content.php");
   }
@@ -17,7 +15,6 @@
 
 <?php
 if (isset($_POST['submit'])) {
-  // Process the form
 
   $id = $current_page["id"];
   $menu_name = mysql_prep($_POST["menu_name"]);
@@ -56,9 +53,8 @@ if (isset($_POST['submit'])) {
 
   }
 } else {
-  // This is probably a GET request
 
-} // end: if (isset($_POST['submit']))
+} 
 
 ?>
 <?php $layout_context = "admin"; ?>

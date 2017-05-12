@@ -8,10 +8,7 @@ function fieldname_as_text($fieldname) {
   return $fieldname;
 }
 
-// * presence
-// use trim() so empty spaces don't count
-// use === to avoid false positives
-// empty() would consider "0" to be empty
+
 function has_presence($value) {
 	return isset($value) && $value !== "";
 }
@@ -26,15 +23,12 @@ function validate_presences($required_fields) {
   }
 }
 
-// * string length
-// max length
 function has_max_length($value, $max) {
 	return strlen($value) <= $max;
 }
 
 function validate_max_lengths($fields_with_max_lengths) {
 	global $errors;
-	// Expects an assoc. array
 	foreach($fields_with_max_lengths as $field => $max) {
 		$value = trim($_POST[$field]);
 	  if (!has_max_length($value, $max)) {
@@ -43,7 +37,6 @@ function validate_max_lengths($fields_with_max_lengths) {
 	}
 }
 
-// * inclusion in a set
 function has_inclusion_in($value, $set) {
 	return in_array($value, $set);
 }

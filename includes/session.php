@@ -8,7 +8,6 @@
 			$output .= htmlentities($_SESSION["message"]);
 			$output .= "</div>";
 
-			// clear message after use
 			$_SESSION["message"] = null;
 
 			return $output;

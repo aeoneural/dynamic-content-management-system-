@@ -7,8 +7,7 @@
 
 <?php
 	if (!$current_subject) {
-		// subject ID was missing or invalid or
-		// subject couldn't be found in database
+
 		redirect_to("manage_content.php");
 	}
 ?>
@@ -52,9 +51,9 @@ if (isset($_POST['submit'])) {
 
 	}
 } else {
-	// This is probably a GET request
 
-} // end: if (isset($_POST['submit']))
+
+} 
 
 ?>
 <?php $layout_context = "admin"; ?>

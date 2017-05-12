@@ -6,10 +6,7 @@
 <?php find_selected_page(); ?>
 
 <?php
-  // Can't add a new page unless we have a subject as a parent!
   if (!$current_subject) {
-    // subject ID was missing or invalid or
-    // subject couldn't be found in database
     redirect_to("manage_content.php");
   }
 ?>

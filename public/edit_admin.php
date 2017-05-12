@@ -7,8 +7,7 @@
   $admin = find_admin_by_id($_GET["id"]);
 
   if (!$admin) {
-    // admin ID was missing or invalid or
-    // admin couldn't be found in database
+
     redirect_to("manage_admins.php");
   }
 ?>
@@ -40,19 +39,17 @@ if (isset($_POST['submit'])) {
     $result = mysqli_query($connection, $query);
 
     if ($result && mysqli_affected_rows($connection) == 1) {
-      // Success
       $_SESSION["message"] = "Admin updated.";
       redirect_to("manage_admins.php");
     } else {
-      // Failure
       $_SESSION["message"] = "Admin update failed.";
     }
 
   }
 } else {
-  // This is probably a GET request
 
-} // end: if (isset($_POST['submit']))
+
+} 
 
 ?>
 
